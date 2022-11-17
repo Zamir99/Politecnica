@@ -1,0 +1,82 @@
+<div class="container pb-70">
+    <div class="col-md-4 col-sm-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+        <div class="p-30 bg-theme-colored-2 mt-10">
+           <h3 class="text-white mt-0 mb-10">Tengo dudas quiero que me llamen!</h3>
+         <!-- Appilication Form Start-->
+
+
+
+         <!-- /////////////////////////////////////////// FROMULARIO /////////////////////////////////// -->
+
+         <div id="carga"> 
+
+           <form id="seguimiento_form" class="reservation-form mt-20">
+             <div class="row">
+
+               <div class="col-sm-12">
+                 <div class="form-group mb-20">
+                   <input placeholder="Nombre" type="text" name="Nombre" required="" class="form-control">
+                 </div>
+               </div>
+
+               <div class="col-sm-12">
+                 <div class="form-group mb-20">
+                   <input placeholder="Apellido" type="text" name="Apellido" required="" class="form-control">
+                 </div>
+               </div>
+
+               <div class="col-sm-12">
+                 <div class="form-group mb-20">
+                   <input placeholder="Email" type="text" name="correo" class="form-control" required="">
+                 </div>
+               </div>
+
+               <div class="col-sm-12">
+                 <div class="form-group mb-20">
+                   <input placeholder="Celular" type="number" name="Celular" class="form-control" required="">
+                 </div>
+               </div>
+
+               <div class="col-sm-12">
+                 <div class="form-group mb-20">
+                   <div class="styled-select">    
+                     <select name="programas" id="programas" class="form-control" required="">
+                       <option hidden disabled selected>Seleccionar Programa</option>
+
+                      <!---- <?php //while( $opciones = $programas->fetch_assoc() ) { ?>
+                         <option value="<?php//echo $opciones['id_programa']; ?>"><?php //echo $opciones['Nombre'];?></option>
+                       <?php //} ?> -->
+                     </select>
+                   </div>
+                 </div>
+               </div>
+
+               <div style="display: none" class="col-sm-12" id="cursos">
+                 <div class="form-group mb-20">
+                   <div class="styled-select">
+                     <select name="cursos" class="form-control" required="">
+                       
+                     </select>
+                   </div>
+                 </div>
+               </div>
+
+               <div class="col-sm-12">
+
+                 <div class="form-group mb-0 mt-10">
+
+                   <div id="mensaje"></div>
+                   <input name="form_botcheck" class="form-control" type="hidden" value="">
+                   <input type="hidden" name="accion" value="add_seguimiento">
+                   <input type="hidden" name="cae" value="<?php echo $cae;?>">
+                   <button type="submit" class="btn btn-colored btn-danger text-white btn-lg btn-block" data-loading-text="Please wait...">Aplicar al descuento</button>
+                 </div>
+               </div>
+
+             </div>
+           </form>
+
+         </div>
+
+
+</div>

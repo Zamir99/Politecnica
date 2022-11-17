@@ -5,9 +5,185 @@
   <title>Politecnica</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--link rel="icon" type="image/x-icon" href="favicon.ico"-->
+  
+
+  <!-- Favicon and Touch Icons -->
+<link href="assets/images/favicon.png" rel="shortcut icon" type="image/png">
+<link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="assets/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+<link href="assets/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+<link href="assets/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+
+<!-- Stylesheet -->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/animate.css" rel="stylesheet" type="text/css">
+<link href="assets/css/css-plugin-collections.css" rel="stylesheet"/>
+
+<!-- CSS | menuzord megamenu skins -->
+<link id="menuzord-menu-skins" href="assets/css/menuzord-skins/menuzord-rounded-boxed.css" rel="stylesheet"/>
+<!-- CSS | Main style file -->
+<link href="assets/css/style-main.css" rel="stylesheet" type="text/css">
+<!-- CSS | Preloader Styles -->
+<link href="assets/css/preloader.css" rel="stylesheet" type="text/css">
+<!-- CSS | Custom Margin Padding Collection -->
+<link href="assets/css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+<!-- CSS | Responsive media queries -->
+<link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+<!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
+<!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
+
+<!-- Revolution Slider 5.x CSS settings -->
+<link  href="assets/js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css"/>
+<link  href="assets/js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css"/>
+<link  href="assets/js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css"/>
+
+<!-- CSS | Theme Color -->
+<link href="assets/css/colors/theme-skin-color-set-1.css" rel="stylesheet" type="text/css">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body class="mat-typography">
   <app-root></app-root>
+
+  <script>
+    $(document).ready(function(e) {
+      $(".rev_slider").revolution({
+        sliderType:"standard",
+        sliderLayout: "auto",
+        dottedOverlay: "none",
+        delay: 5000,
+        navigation: {
+            keyboardNavigation: "off",
+            keyboard_direction: "horizontal",
+            mouseScrollNavigation: "off",
+            onHoverStop: "off",
+            touch: {
+                touchenabled: "on",
+                swipe_threshold: 75,
+                swipe_min_touches: 1,
+                swipe_direction: "horizontal",
+                drag_block_vertical: false
+            },
+          arrows: {
+            style:"zeus",
+            enable:true,
+            hide_onmobile:true,
+            hide_under:600,
+            hide_onleave:true,
+            hide_delay:200,
+            hide_delay_mobile:1200,
+            tmp:'<div class="tp-title-wrap">    <div class="tp-arr-imgholder"></div> </div>',
+            left: {
+              h_align:"left",
+              v_align:"center",
+              h_offset:30,
+              v_offset:0
+            },
+            right: {
+              h_align:"right",
+              v_align:"center",
+              h_offset:30,
+              v_offset:0
+            }
+          },
+          bullets: {
+            enable:true,
+            hide_onmobile:true,
+            hide_under:600,
+            style:"metis",
+            hide_onleave:true,
+            hide_delay:200,
+            hide_delay_mobile:1200,
+            direction:"horizontal",
+            h_align:"center",
+            v_align:"bottom",
+            h_offset:0,
+            v_offset:30,
+            space:5,
+            tmp:'<span class="tp-bullet-img-wrap">  <span class="tp-bullet-image"></span></span><span class="tp-bullet-title">{{title}}</span>'
+          }
+        },
+        responsiveLevels: [1240, 1024, 778],
+        visibilityLevels: [1240, 1024, 778],
+        gridwidth: [1170, 1024, 778, 480],
+        gridheight: [650, 768, 960, 720],
+        lazyType: "none",
+        parallax: {
+            origo: "slidercenter",
+            speed: 1000,
+            levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 100, 55],
+            type: "scroll"
+        },
+        shadow: 0,
+        spinner: "off",
+        stopLoop: "on",
+        stopAfterLoops: 0,
+        stopAtSlide: -1,
+        shuffle: "off",
+        autoHeight: "off",
+        fullScreenAutoWidth: "off",
+        fullScreenAlignForce: "off",
+        fullScreenOffsetContainer: "",
+        fullScreenOffset: "0",
+        hideThumbsOnMobile: "off",
+        hideSliderAtLimit: 0,
+        hideCaptionAtLimit: 0,
+        hideAllCaptionAtLilmit: 0,
+        debugMode: false,
+        fallbacks: {
+            simplifyAll: "off",
+            nextSlideOnWindowFocus: "off",
+            disableFocusListener: false,
+        }
+      });
+    });
+  </script>
+  
+<script>
+  $(document).ready(function() {
+
+// Gets the video src from the data-src on each button
+
+var $videoSrc;  
+$('.video-btn').click(function() {
+    $videoSrc = $(this).data( "src" );
+});
+console.log($videoSrc);
+
+  
+  
+// when the modal is opened autoplay it  
+$('#myModal').on('shown.bs.modal', function (e) {
+    
+// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+$("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
+})
+  
+
+
+// stop playing the youtube video when I close the modal
+$('#myModal').on('hide.bs.modal', function (e) {
+    // a poor man's stop video
+    $("#video").attr('src',$videoSrc); 
+}) 
+    
+    
+
+
+  
+  
+// document ready  
+});
+
+</script>
+
+
+
+
 </body>
 </html>
